@@ -8,9 +8,6 @@ RUN apt-get update && \
     apt-get install -y nginx && \
     apt-get clean
 
-# Copy website files
-COPY ../web /var/www/html
-
 # Expose default port
 EXPOSE 80
 
