@@ -7,7 +7,7 @@ services:
       dockerfile: docker/Dockerfile
     container_name: ubuntu24_nginx
     ports:
-      - "80:80"
+      - "8080:80"
     restart: unless-stopped
     volumes:
       - ../web:/var/www/html
