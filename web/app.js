@@ -133,6 +133,18 @@ function toggleSubMenu(button){
   }
 }
 
+function toggleMobileMore(button){
+  const mobileMoreMenu = button.nextElementSibling;
+  
+  // Close any open regular submenus
+  if(!mobileMoreMenu.classList.contains('show')){
+    closeAllSubMenus();
+  }
+  
+  mobileMoreMenu.classList.toggle('show');
+  button.classList.toggle('rotate');
+}
+
 function closeAllSubMenus(){
   const sidebar = document.getElementById('sidebar');
   if (sidebar) {
