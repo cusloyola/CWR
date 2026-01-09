@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <script type="text/javascript" src="../app.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gray-50 text-gray-900 justify-center flex items-center">
+
+  <main class="p-8 max-lg:p-4 max-lg:pb-20 flex items-center justify-center">
+    <div class="w-full max-w-5xl border border-gray-300 rounded-2xl overflow-hidden bg-white shadow-sm max-md:border-none max-md:shadow-none">
+      <div class="grid lg:grid-cols-2">
+        <div class="hidden lg:flex flex-col justify-between p-10" style="background: linear-gradient(135deg, var(--accent-clr), #7c86ff); color: #fff;">
+          <div>
+            <p class="uppercase tracking-[0.2em] text-sm mb-3 opacity-90">Welcome back</p>
+            <h1 class="text-3xl font-semibold leading-tight">Sign in to continue your work with the same clean dashboard experience.</h1>
+          </div>
+          <div class="space-y-3 text-sm opacity-90">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20">✓</span>
+              <p>Light and dark themes stay in sync wherever you log in.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 border border-white/20">✓</span>
+              <p>Secure access to WPSI, WMSI, WLPI, CFII and more.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8 max-lg:p-6">
+          <div class="mb-6">
+            <p class="text-sm uppercase tracking-[0.2em] text-gray-500">Account</p>
+            <h2 class="text-2xl font-semibold mt-2">Login</h2>
+            <p class="text-gray-500 mt-2">Use your credentials to access the workspace. Your theme preference is preserved.</p>
+          </div>
+
+          <form class="space-y-5">
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium text-gray-600">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--accent-clr)] focus:border-transparent transition" placeholder="you@example.com">
+            </div>
+            <div class="space-y-2">
+              <label for="password" class="text-sm font-medium text-gray-600">Password</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--accent-clr)] focus:border-transparent transition" placeholder="••••••••">
+            </div>
+
+            <div class="flex items-center justify-between text-sm text-gray-600">
+              <label class="inline-flex items-center gap-2">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-[var(--accent-clr)] focus:ring-[var(--accent-clr)]" checked>
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="text-[var(--accent-clr)] hover:underline">Forgot password?</a>
+            </div>
+
+            <button type="submit"
+              class="w-full py-3.5 rounded-lg text-white font-semibold shadow-sm transition hover:shadow-md"
+              style="background-color: var(--accent-clr);">Sign in</button>
+          </form>
+
+          <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
+            <span>Need an account?</span>
+            <a href="#" class="text-[var(--accent-clr)] hover:underline">Request access</a>
+          </div>
+
+          <div class="mt-8 border border-dashed border-gray-300 rounded-xl p-4 flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-700">Prefer a different look?</p>
+              <p class="text-sm text-gray-500">Toggle the theme to preview how your dashboard will feel.</p>
+            </div>
+            <button type="button" id="login-page-theme-toggle"
+              class="flex items-center gap-3 px-4 py-2 rounded-lg border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" class="theme-icon">
+                <path
+                  d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" />
+              </svg>
+              <span class="text-sm font-medium">Toggle theme</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginThemeToggle = document.getElementById('login-page-theme-toggle');
+      if (loginThemeToggle) {
+        loginThemeToggle.addEventListener('click', () => themeManager.toggleTheme());
+      }
+    });
+  </script>
+</body>
+
+</html>
